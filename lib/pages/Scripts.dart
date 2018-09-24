@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import '../constants/Constants.dart';
 import 'package:audioplayers/audio_cache.dart';
+import '../constants/Constants.dart';
 
-// 假名列表页面
+// Kana scripts page
 class ScriptsPage extends StatelessWidget {
+  // init audio player
   final AudioCache player = new AudioCache(prefix: 'audios/');
+
+  // make children for SliverGrid.count
   List<Widget> makeKanaList(Map<String, String> hiragana, Map<String, String> katakana) {
     var kanaList = <Widget>[];
+
+    // placeholder for line 'ya' and 'wa'
     Widget placeholder = Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black12, width: 0.5)
@@ -42,6 +47,7 @@ class ScriptsPage extends StatelessWidget {
         )
       );
 
+      // insert placeholder for line 'ya' and 'wa'
       if (key == 'ya' || key == 'yu') {
         kanaList.add(placeholder);
       }
@@ -53,6 +59,7 @@ class ScriptsPage extends StatelessWidget {
     return kanaList;
   }
 
+  // make titles for three types of kana
   SliverFixedExtentList makeKanaTitle(String titleStr) {
     var title = <Widget>[
       Container(
