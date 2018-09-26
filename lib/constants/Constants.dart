@@ -1,4 +1,11 @@
 class Constants {
+  static List<Map<String, String>> get hiraganaBasicFor {
+    var _ret = [];
+    hiraganaBasic.forEach((String key, String value) {
+      _ret.add(<String, String>{'roman': key, 'character': value});
+    });
+    return _ret;
+  }
   static const Map<String, String> hiraganaBasic = {
     'a': 'あ',
     'i': 'い',
