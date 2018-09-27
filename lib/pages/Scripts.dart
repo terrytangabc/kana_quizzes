@@ -35,6 +35,7 @@ class ScriptsPage extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 18.0,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 Container(

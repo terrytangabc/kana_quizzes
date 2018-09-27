@@ -1,8 +1,8 @@
 class Constants {
-  static List<Map<String, String>> get hiraganaBasicFor {
-    var _ret = [];
-    hiraganaBasic.forEach((String key, String value) {
-      _ret.add(<String, String>{'roman': key, 'character': value});
+  static List<Map<String, String>> getFormattedList(Map<String, String> list) {
+    var _ret = <Map<String, String>>[];
+    list.forEach((String key, String value) {
+      _ret.add({'roman': key, 'character': value});
     });
     return _ret;
   }
