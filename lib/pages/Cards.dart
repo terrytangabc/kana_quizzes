@@ -70,24 +70,33 @@ class _CardsItemState extends State<CardsItem> {
           _romanVisible = true;
         });
       },
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 150.0, horizontal: 50.0),
-        padding: EdgeInsets.only(bottom: 15.0),
-        decoration: BoxDecoration(
-          color: Colors.orangeAccent,
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          boxShadow: <BoxShadow>[BoxShadow(color: Colors.black54, offset: Offset(1.0, 1.0), blurRadius: 2.0, )],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Opacity(
-              opacity: _romanVisible ? 1.0 : 0.0,
-              child: Text(widget.roman, style: TextStyle(fontSize: 64.0),),
+      child: OrientationBuilder(
+        builder: (BuildContext context, Orientation orientation) {
+          return Container(
+            margin: orientation == Orientation.portrait ?
+              EdgeInsets.symmetric(vertical: 150.0, horizontal: 50.0) :
+              EdgeInsets.symmetric(vertical: 30.0, horizontal: 200.0),
+            decoration: BoxDecoration(
+              color: Colors.orangeAccent,
+              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              boxShadow: <BoxShadow>[BoxShadow(color: Colors.black54,
+                offset: Offset(1.0, 1.0),
+                blurRadius: 2.0,)
+              ],
             ),
-            new Text(widget.character, style: TextStyle(fontSize: 88.0),),
-          ],
-        ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Opacity(
+                  opacity: _romanVisible ? 1.0 : 0.0,
+                  child: Text(
+                    widget.roman, style: TextStyle(fontSize: 64.0),),
+                ),
+                new Text(widget.character, style: TextStyle(fontSize: 88.0),),
+              ],
+            ),
+          );
+        }
       ),
     );
   }

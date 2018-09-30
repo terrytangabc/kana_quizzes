@@ -17,7 +17,7 @@ class KanaQuizzesState extends State<KanaQuizzes> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(
-          primaryColor: const Color(0xFF0B62B1)
+          primaryColor: const Color(0xFF0078d7)
       ),
       home: new Scaffold(
           appBar: new AppBar(
