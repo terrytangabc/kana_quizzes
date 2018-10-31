@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './Cards.dart';
+import './Dictations.dart';
 
 // 假名列表页面
 class QuizzesPage extends StatelessWidget {
@@ -36,7 +37,7 @@ class QuizzesPage extends StatelessWidget {
               title: const Text('Dictations'),
               subtitle: const Text('Practice Your Listening and Writing'),
               onTap: () {
-                print(this);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Dictations()));
               },
             ),
           ),
