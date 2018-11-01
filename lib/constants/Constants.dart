@@ -1,3 +1,7 @@
+enum KanaType {
+  hiragana, katakana
+}
+
 class Constants {
   static List<Map<String, String>> getFormattedList(Map<String, String> list) {
     var _ret = <Map<String, String>>[];
